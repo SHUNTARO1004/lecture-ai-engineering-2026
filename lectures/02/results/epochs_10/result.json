@@ -1,0 +1,113 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "seed": 42,
+    "num_train_epochs": 10,
+    "warmup_steps": 6,
+    "lr": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "max_seq_len": 512,
+    "max_new_tokens": 96,
+    "gen": {
+      "do_sample": false
+    }
+  },
+  "versions": {
+    "transformers": "5.18.0",
+    "peft": "0.21.1",
+    "trl": "1.14.2",
+    "torch": "2.14.1+cu130"
+  },
+  "method": "LoRA（量子化なし）",
+  "before": {
+    "label": "before",
+    "n": 21,
+    "format_rate": 0.09523809523809523,
+    "content_rate": 0.0,
+    "both_rate": 0.0,
+    "seconds": 46.1
+  },
+  "after": {
+    "label": "after",
+    "n": 21,
+    "format_rate": 1.0,
+    "content_rate": 0.9047619047619048,
+    "both_rate": 0.9047619047619048,
+    "seconds": 42.6
+  },
+  "regressed": [],
+  "knowledge": [
+    {
+      "質問": "この講座の最終課題の締切はいつですか",
+      "FAQ にある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"9 月 30 日 23:59\"}",
+      "学習後の分類": "asserted",
+      "学習後の出力": "{\"answer\": \"課題の提出期限は 9 月 30 日 23:59（日本時間）です。\", \"needs_review\": false}"
+    },
+    {
+      "質問": "担当教員の名前は何ですか",
+      "FAQ にある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"確認が必要\"}",
+      "学習後の分類": "needs_review",
+      "学習後の出力": "{\"answer\": \"この FAQ には記載がありません。必ずに確認が必要です。\", \"needs_review\": true}"
+    },
+    {
+      "質問": "次回の講義のテーマは何ですか",
+      "FAQ にある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"次回の講義のテーマは「学習ポータル」の「課題」欄で提出する PDF 1 ファイルを提出します。\"}",
+      "学習後の分類": "needs_review",
+      "学習後の出力": "{\"answer\": \"この FAQ には記載がありません。運営に確認が必要です。\", \"needs_review\": true}"
+    },
+    {
+      "質問": "課題の提出期限はいつですか",
+      "FAQ にある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"9 月 30 日 23:59\"}",
+      "学習後の分類": "asserted",
+      "学習後の出力": "{\"answer\": \"課題の提出期限は 9 月 30 日 23:59（日本時間）です。\", \"needs_review\": false}"
+    }
+  ],
+  "executed_training_myself": true,
+  "training": {
+    "final_logged_loss": 0.0986630380153656,
+    "train_runtime_seconds": 117.2641,
+    "global_step": 20,
+    "log_history": [
+      {
+        "loss": 1.5633955001831055,
+        "grad_norm": 2.0535101890563965,
+        "learning_rate": 0.000178183148246803,
+        "entropy": 1.8388643980026245,
+        "num_tokens": 17860.0,
+        "mean_token_accuracy": 0.6867142498493195,
+        "epoch": 5.0,
+        "step": 10
+      },
+      {
+        "loss": 0.0986630380153656,
+        "grad_norm": 0.393216073513031,
+        "learning_rate": 2.5072087818176382e-06,
+        "entropy": 0.20458318740129472,
+        "num_tokens": 35720.0,
+        "mean_token_accuracy": 0.9828425824642182,
+        "epoch": 10.0,
+        "step": 20
+      },
+      {
+        "train_runtime": 117.2641,
+        "train_samples_per_second": 1.194,
+        "train_steps_per_second": 0.171,
+        "total_flos": 110607260520960.0,
+        "train_loss": 0.8310292690992356,
+        "epoch": 10.0,
+        "step": 20
+      }
+    ]
+  },
+  "execution_note": "受講者のColabでAIツールが操作して実行。講師の参考結果は使用していない。"
+}
