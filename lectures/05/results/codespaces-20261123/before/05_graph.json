@@ -1,0 +1,24 @@
+{
+  "name": "05_graph",
+  "command": [
+    "uv",
+    "run",
+    "python",
+    "-m",
+    "app.agent",
+    "--graph",
+    "--trace",
+    "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？"
+  ],
+  "started_at_utc": "2026-11-23T05:39:16.237240+00:00",
+  "exit_code": 0,
+  "timed_out": false,
+  "launch_error": null,
+  "process_wall_time_seconds": 5.531038964000345,
+  "app_metric_lines": [
+    "[model] gemini-3.5-flash-lite",
+    "[time] 回答完了まで 3.13 秒（検索・埋め込みを含む）",
+    "[usage] 入力 5,776 tokens / 出力 229 tokens / モデル応答 2 回",
+    "[cost] 生成APIの推定コスト: $0.001757 USD（埋め込み・索引構築分は含まない）"
+  ]
+}

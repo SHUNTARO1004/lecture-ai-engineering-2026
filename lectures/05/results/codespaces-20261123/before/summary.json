@@ -1,0 +1,118 @@
+{
+  "phase": "before",
+  "finished_at_utc": "2026-11-23T05:39:21.768699+00:00",
+  "commands": [
+    {
+      "name": "01_full_context",
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "-m",
+        "app.agent",
+        "--full-context",
+        "--trace",
+        "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？"
+      ],
+      "started_at_utc": "2026-11-23T05:38:50.148924+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "process_wall_time_seconds": 10.787762738999845,
+      "app_metric_lines": [
+        "[model] gemini-3.5-flash-lite",
+        "[time] 回答完了まで 5.16 秒（検索・埋め込みを含む）",
+        "[usage] 入力 117,025 tokens / 出力 200 tokens / モデル応答 1 回",
+        "[cost] 生成APIの推定コスト: $0.004651 USD（埋め込み・索引構築分は含まない）"
+      ]
+    },
+    {
+      "name": "02_retrieval",
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "-m",
+        "app.retrieval",
+        "LoRA QLoRA 違い"
+      ],
+      "started_at_utc": "2026-11-23T05:39:00.937142+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "process_wall_time_seconds": 1.697719767000308,
+      "app_metric_lines": []
+    },
+    {
+      "name": "03_vector",
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "-m",
+        "app.agent",
+        "--trace",
+        "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？"
+      ],
+      "started_at_utc": "2026-11-23T05:39:02.635524+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "process_wall_time_seconds": 5.584634799000014,
+      "app_metric_lines": [
+        "[model] gemini-3.5-flash-lite",
+        "[time] 回答完了まで 3.17 秒（検索・埋め込みを含む）",
+        "[usage] 入力 3,028 tokens / 出力 218 tokens / モデル応答 2 回",
+        "[cost] 生成APIの推定コスト: $0.001453 USD（埋め込み・索引構築分は含まない）"
+      ]
+    },
+    {
+      "name": "04_tree",
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "-m",
+        "app.agent",
+        "--tree",
+        "--trace",
+        "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？"
+      ],
+      "started_at_utc": "2026-11-23T05:39:08.220621+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "process_wall_time_seconds": 8.016117519999625,
+      "app_metric_lines": [
+        "[model] gemini-3.5-flash-lite",
+        "[time] 回答完了まで 5.60 秒（検索・埋め込みを含む）",
+        "[usage] 入力 9,214 tokens / 出力 324 tokens / モデル応答 5 回",
+        "[cost] 生成APIの推定コスト: $0.003574 USD（埋め込み・索引構築分は含まない）"
+      ]
+    },
+    {
+      "name": "05_graph",
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "-m",
+        "app.agent",
+        "--graph",
+        "--trace",
+        "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？"
+      ],
+      "started_at_utc": "2026-11-23T05:39:16.237240+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "process_wall_time_seconds": 5.531038964000345,
+      "app_metric_lines": [
+        "[model] gemini-3.5-flash-lite",
+        "[time] 回答完了まで 3.13 秒（検索・埋め込みを含む）",
+        "[usage] 入力 5,776 tokens / 出力 229 tokens / モデル応答 2 回",
+        "[cost] 生成APIの推定コスト: $0.001757 USD（埋め込み・索引構築分は含まない）"
+      ]
+    }
+  ]
+}

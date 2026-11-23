@@ -1,0 +1,23 @@
+{
+  "phase": "test",
+  "started_at_utc": "2026-11-23T05:40:42.973752+00:00",
+  "git_head": "c0a42a3cac42e70f15aa50f59cf830ebb4d60893",
+  "recorder_python": "3.12.15 (main, Oct  6 2026, 04:38:21) [GCC 14.2.0]",
+  "python": "Python 3.12.15",
+  "uv": "uv 0.13.5 (x86_64-unknown-linux-gnu)",
+  "AIE_MODEL_environment": null,
+  "configured_model": "gemini-3.5-flash-lite",
+  "rag_top_k": 3,
+  "question": "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？",
+  "timeout_seconds": 300,
+  "process_wall_time_definition": "Launch through exit including startup; NOT app [time] answer completion time.",
+  "materials_sha256": {
+    "lectures.json": "f6022c177ec1b5575b56d21307a5ae2aa09c586047398a17e1e4b86a56e99dce",
+    "tree.json": "8d16e7f6a6b5c4864591fbfe0ac55598f6117ff226e4b1e2bd47b0401be79dfc",
+    "graph.json": "6d32f92f97470d9febbdb076face22b9c74eb2c57d4950d3ed31978c57007e81"
+  },
+  "database": {
+    "path": "/workspaces/lec05/data/rag_data/index.sqlite3",
+    "sha256": "600d7a3633d84c21b6b26d511f9cd701d7dbee32bfe8eab0fd6fee3affb0f69e"
+  }
+}
