@@ -1,0 +1,21 @@
+{
+  "phase": "test",
+  "finished_at_utc": "2026-11-23T05:40:48.670207+00:00",
+  "commands": [
+    {
+      "name": "01_pytest",
+      "command": [
+        "uv",
+        "run",
+        "pytest",
+        "-q"
+      ],
+      "started_at_utc": "2026-11-23T05:40:43.006694+00:00",
+      "exit_code": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "process_wall_time_seconds": 5.662965573999827,
+      "app_metric_lines": []
+    }
+  ]
+}

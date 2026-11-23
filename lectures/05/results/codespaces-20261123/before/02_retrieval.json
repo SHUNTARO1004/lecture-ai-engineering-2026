@@ -1,0 +1,17 @@
+{
+  "name": "02_retrieval",
+  "command": [
+    "uv",
+    "run",
+    "python",
+    "-m",
+    "app.retrieval",
+    "LoRA QLoRA 違い"
+  ],
+  "started_at_utc": "2026-11-23T05:39:00.937142+00:00",
+  "exit_code": 0,
+  "timed_out": false,
+  "launch_error": null,
+  "process_wall_time_seconds": 1.697719767000308,
+  "app_metric_lines": []
+}

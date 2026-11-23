@@ -1,0 +1,119 @@
+
+=== before: 2026-11-23T14:01:19.364529+09:00 ===
+Runtime: Windows / Python 3.13.15 / uv 0.13.9; UV_OFFLINE=true
+GEMINI_API_KEY set: False
+RAG_TOP_K = 5
+
+$ uv run python -m app.agent --full-context --trace "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？"
+[model] gemini-3.5-flash-lite
+[stderr]
+環境変数 GEMINI_API_KEY が見つかりません。
+1. GitHub の Settings → Codespaces → Secrets に GEMINI_API_KEY を登録し、
+   使う repository に自分の fork を選んでください。
+2. Codespaces を起動したあとに登録した場合は、Codespaces を再起動してください。
+   （左下の「Codespaces」→「Stop Current Codespace」→ 再度開く）
+Exit code: 1; process wall time: 6.44s (not answer completion time)
+
+$ uv run python -m app.retrieval "LoRA QLoRA 違い"
+
+[stderr]
+環境変数 GEMINI_API_KEY が見つかりません。
+1. GitHub の Settings → Codespaces → Secrets に GEMINI_API_KEY を登録し、
+   使う repository に自分の fork を選んでください。
+2. Codespaces を起動したあとに登録した場合は、Codespaces を再起動してください。
+   （左下の「Codespaces」→「Stop Current Codespace」→ 再度開く）
+Exit code: 1; process wall time: 1.61s (not answer completion time)
+
+$ uv run python -m app.agent --trace "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？"
+[model] gemini-3.5-flash-lite
+[stderr]
+環境変数 GEMINI_API_KEY が見つかりません。
+1. GitHub の Settings → Codespaces → Secrets に GEMINI_API_KEY を登録し、
+   使う repository に自分の fork を選んでください。
+2. Codespaces を起動したあとに登録した場合は、Codespaces を再起動してください。
+   （左下の「Codespaces」→「Stop Current Codespace」→ 再度開く）
+Exit code: 1; process wall time: 2.95s (not answer completion time)
+
+$ uv run python -m app.agent --tree --trace "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？"
+[model] gemini-3.5-flash-lite
+[stderr]
+環境変数 GEMINI_API_KEY が見つかりません。
+1. GitHub の Settings → Codespaces → Secrets に GEMINI_API_KEY を登録し、
+   使う repository に自分の fork を選んでください。
+2. Codespaces を起動したあとに登録した場合は、Codespaces を再起動してください。
+   （左下の「Codespaces」→「Stop Current Codespace」→ 再度開く）
+Exit code: 1; process wall time: 2.92s (not answer completion time)
+
+$ uv run python -m app.agent --graph --trace "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？"
+[model] gemini-3.5-flash-lite
+[stderr]
+環境変数 GEMINI_API_KEY が見つかりません。
+1. GitHub の Settings → Codespaces → Secrets に GEMINI_API_KEY を登録し、
+   使う repository に自分の fork を選んでください。
+2. Codespaces を起動したあとに登録した場合は、Codespaces を再起動してください。
+   （左下の「Codespaces」→「Stop Current Codespace」→ 再度開く）
+Exit code: 1; process wall time: 2.91s (not answer completion time)
+
+=== after: 2026-11-23T14:01:46.849554+09:00 ===
+Runtime: Windows / Python 3.13.15 / uv 0.13.9; UV_OFFLINE=true
+GEMINI_API_KEY set: False
+RAG_TOP_K = 3
+
+$ uv run python -m app.agent --trace "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？"
+[model] gemini-3.5-flash-lite
+[stderr]
+環境変数 GEMINI_API_KEY が見つかりません。
+1. GitHub の Settings → Codespaces → Secrets に GEMINI_API_KEY を登録し、
+   使う repository に自分の fork を選んでください。
+2. Codespaces を起動したあとに登録した場合は、Codespaces を再起動してください。
+   （左下の「Codespaces」→「Stop Current Codespace」→ 再度開く）
+Exit code: 1; process wall time: 2.92s (not answer completion time)
+
+=== test: 2026-11-23T14:01:50.347809+09:00 ===
+Runtime: Windows / Python 3.13.15 / uv 0.13.9; UV_OFFLINE=true
+GEMINI_API_KEY set: False
+RAG_TOP_K = 3
+
+$ uv run pytest -q
+
+=== Read-only material inspection (not an API/search result) ===
+{
+  "source_documents": 9,
+  "source_pages": 438,
+  "configured_documents": [
+    "lec01-main",
+    "lec02-main",
+    "lec03-main"
+  ],
+  "configured_pages": 214,
+  "index_counts": {
+    "lec01-main": 73,
+    "lec02-main": 70,
+    "lec03-main": 71
+  },
+  "index_sha256": "600d7a3633d84c21b6b26d511f9cd701d7dbee32bfe8eab0fd6fee3affb0f69e",
+  "configured_model": "gemini-3.5-flash-lite",
+  "manual_source_check": {
+    "page_id": "lec02-main-p052",
+    "title": "LoRA と QLoRA ：大きなモデルも GPU 1 台で調整できる",
+    "content": "4/4 　選んだモデルを、いつ・どう直すか\nLoRA と QLoRA ：大きなモデルも GPU 1 台で調整できる\n元の重みは固定し、小さな「差分」だけを学習する（ LoRA ）。さらに元の重みを 4bit に圧縮する（ QLoRA ）\n出典： E. J. Hu et al. 「 LoRA 」（ ICLR 2022 ）／ T. Dettmers et al. 「 QLoRA 」（ NeurIPS 2023 ）。演習では transformers ・ peft ・ bitsandbytes ・ TRL を使用\nLoRA （ Hu et al. Fig.1 ）： A と B だけを学習する\n青：元の重み W\n固定して学習しない。 QLoRA では\n4bit （数値を粗く保存）にして\n約 1/4 。 7B なら約 4GB\n橙：小さな行列 A ・ B\nこれだけを学習。細長い 2 つの\n行列の積で、変化分を表す（低ランク）\nイメージ\n本体はそのままに、薄い「付箋」を\n書き足す。学習するのは全体の\n1% 未満にもできる\n650 億\nパラメータのモデルを\n48GB GPU 1 台\nで微調整（ QLoRA 論文）\n• Colab の GPU （例： 16GB ）でも、\n数十億パラメータ級なら調整できる。今日の\n演習はこれ\n• データの準備・評価・運用の手間は別にかかる\n© Matsuo-Iwasawa Lab, The University of Tokyo 52\n\n【図表・画像内の補足文字起こし】\nLoRA図：Pretrained Weights W ∈ R^(d×d)、x、h、A ~ N(0, σ²)、B = 0、d、r。"
+  }
+}
+Command timed out after 180 seconds
+=== Retest outside sandbox: uv run pytest -q ===
+.....................                                                    [100%]
+21 passed in 5.31s
+Pytest exit code: 0
+=== Final verification ===
+{
+  "diff_check_exit": 0,
+  "branch": "lec05",
+  "main_unchanged": true,
+  "existing_changes_unchanged": true,
+  "existing_files_and_index_hashes_unchanged": true,
+  "changed_files": [
+    " M app/config.py",
+    " M lectures/05/answer.md",
+    "?? lectures/05/results/"
+  ]
+}
